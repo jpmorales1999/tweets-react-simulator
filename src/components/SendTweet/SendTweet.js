@@ -12,7 +12,7 @@ import './SendTweet.scss'
 export default function SendTweet(props) {
   const [ isOpenModal, setIsOpenModal ] = useState(false)
 
-  const { setToastProps, allTweets } = props
+  const { setToastProps, allTweets, setReloadTweets } = props
 
   const openModal = () => 
   {
@@ -55,6 +55,7 @@ export default function SendTweet(props) {
         text: 'Success: Tweet enviado correctamente.'
       });
       closeModal()
+      setReloadTweets(true)
     }
     // Limpiamos Array 
     allTweetsArray = []
